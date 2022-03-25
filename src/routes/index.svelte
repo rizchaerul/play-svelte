@@ -1,8 +1,14 @@
-<div class="d-flex justify-content-center align-items-center vh-100">
-    <div class="text-center">
-        <h1>Welcome to SvelteKit</h1>
-        <p>
-            Click <a href="/home">this</a> to go to the home page.
-        </p>
+<script>
+    import GuestLayout from "$lib/components/layouts/GuestLayout.svelte";
+</script>
+
+<GuestLayout>
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="text-center">
+            <h1>Welcome to SvelteKit</h1>
+            <p>
+                Click <a href="/home">this</a> to go to the home page.
+            </p>
+        </div>
     </div>
-</div>
+</GuestLayout>
