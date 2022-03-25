@@ -1,5 +1,5 @@
 <script lang="ts">
-    // TODO: Fix UI flicker on first load.
+    // UI flicker is only on development mode.
     import "../app.scss";
 </script>
 
