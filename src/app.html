@@ -3,11 +3,39 @@
     <head>
         <meta charset="utf-8" />
         <meta name="description" content="" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, user-scalable=no"
+        />
+
         <link rel="icon" href="%svelte.assets%/favicon.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="manifest" href="/manifest.json" />
+
         %svelte.head%
     </head>
     <body>
         <div>%svelte.body%</div>
+
+        <script>
+            // Register service worker.
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", async () => {
+                    try {
+                        await navigator.serviceWorker.register(
+                            "/service-worker.js"
+                        );
+
+                        console.log("Service worker is registered.");
+                    } catch (err) {
+                        console.error(
+                            "Error when registering service worker.",
+                            err
+                        );
+                    }
+                });
+            }
+        </script>
     </body>
 </html>
